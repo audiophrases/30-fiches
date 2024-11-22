@@ -1,0 +1,1180 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Se présenter, loisirs et famille</title>
+    <style>
+      /* Styles */
+      .title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .title-l2 {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .title-l1 {
+        font-size: 18px;
+        color: gray;
+      }
+      .l2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+      .l1 {
+        font-size: 18px;
+        color: gray;
+        margin-bottom: 15px;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .audio-section {
+        margin-bottom: 30px;
+        /* Removed text-align: center to align left */
+        text-align: left;
+      }
+      .audio-player {
+        /* Changed to block and set width appropriately */
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        margin-top: 5px;
+      }
+      .controls {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+      }
+      .controls button,
+      .controls select {
+        background-color: #f0f0f0;
+        border: none;
+        margin-right: 5px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .controls button:hover,
+      .controls select:hover {
+        background-color: #e0e0e0;
+      }
+      .progress {
+        width: 100%;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+      }
+      .progress input[type="range"] {
+        flex-grow: 1;
+      }
+      .time {
+        font-size: 14px;
+        margin-left: 10px;
+        width: 70px;
+        text-align: right;
+      }
+      .audio-container {
+        /* For debugging, keep it visible */
+        /* display: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Title Rows -->
+    <div class="title">
+      <div class="title-l2">Se présenter, loisirs et famille</div>
+      <div class="title-l1">Fitxes personals</div>
+    </div>
+
+    <!-- Content Sections -->
+<div class="l2">Sophie Durand (12 ans)</div>
+<div class="l1">Sophie Durand (12 anys)</div>
+<div class="l2">Hobbies : Dessiner et jouer au handball</div>
+<div class="l1">Passatemps: Dibuixar i jugar a handbol</div>
+<div class="l2">Origine : Toulouse, France</div>
+<div class="l1">Origen: Tolosa, França</div>
+<div class="l2">Famille : Un frère aîné (15 ans), une petite sœur (8 ans)</div>
+<div class="l1">Família: Un germà gran (15 anys), una germana petita (8 anys)</div>
+<div class="l2">Animal de compagnie : Un lapin nommé "Caramel"</div>
+<div class="l1">Mascota: Un conill anomenat "Caramel"</div>
+
+    <div class="audio-section" id="audio1_container">
+      <div class="audio-player">
+        <audio id="audio1" src="30fiches-00.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio1')">« 5s</button>
+          <button onclick="playPause('audio1')" id="playPauseBtn_audio1">Play</button>
+          <button onclick="skip('audio1')">5s »</button>
+          <select onchange="changeSpeed('audio1', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio1" value="0" step="0.1" min="0" max="100" onchange="seek('audio1', this.value)">
+          <div class="time" id="time_audio1">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Lucas Martin (13 ans)</div>
+<div class="l1">Lucas Martin (13 anys)</div>
+<div class="l2">Hobbies : Jouer aux jeux vidéo et au football</div>
+<div class="l1">Passatemps: Jugar a videojocs i al futbol</div>
+<div class="l2">Origine : Barcelone, Espagne</div>
+<div class="l1">Origen: Barcelona, Espanya</div>
+<div class="l2">Famille : Une sœur (10 ans)</div>
+<div class="l1">Família: Una germana (10 anys)</div>
+<div class="l2">Animal de compagnie : Un chien nommé "Rex"</div>
+<div class="l1">Mascota: Un gos anomenat "Rex"</div>
+
+    <div class="audio-section" id="audio2_container">
+      <div class="audio-player">
+        <audio id="audio2" src="30fiches-01.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio2')">« 5s</button>
+          <button onclick="playPause('audio2')" id="playPauseBtn_audio2">Play</button>
+          <button onclick="skip('audio2')">5s »</button>
+          <select onchange="changeSpeed('audio2', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio2" value="0" step="0.1" min="0" max="100" onchange="seek('audio2', this.value)">
+          <div class="time" id="time_audio2">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Emma Petit (11 ans)</div>
+<div class="l1">Emma Petit (11 anys)</div>
+<div class="l2">Hobbies : Lire des romans et faire du roller</div>
+<div class="l1">Passatemps: Llegir novel·les i fer patinatge</div>
+<div class="l2">Origine : Lyon, France</div>
+<div class="l1">Origen: Lyon, França</div>
+<div class="l2">Famille : Fille unique</div>
+<div class="l1">Família: Filla única</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio3_container">
+      <div class="audio-player">
+        <audio id="audio3" src="30fiches-02.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio3')">« 5s</button>
+          <button onclick="playPause('audio3')" id="playPauseBtn_audio3">Play</button>
+          <button onclick="skip('audio3')">5s »</button>
+          <select onchange="changeSpeed('audio3', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio3" value="0" step="0.1" min="0" max="100" onchange="seek('audio3', this.value)">
+          <div class="time" id="time_audio3">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Adam Lopez (14 ans)</div>
+<div class="l1">Adam Lopez (14 anys)</div>
+<div class="l2">Hobbies : Jouer de la guitare et écouter du rock</div>
+<div class="l1">Passatemps: Tocar la guitarra i escoltar rock</div>
+<div class="l2">Origine : Madrid, Espagne</div>
+<div class="l1">Origen: Madrid, Espanya</div>
+<div class="l2">Famille : Deux grandes sœurs (16 et 18 ans)</div>
+<div class="l1">Família: Dues germanes grans (16 i 18 anys)</div>
+<div class="l2">Animal de compagnie : Un chat nommé "Simba"</div>
+<div class="l1">Mascota: Un gat anomenat "Simba"</div>
+
+    <div class="audio-section" id="audio4_container">
+      <div class="audio-player">
+        <audio id="audio4" src="30fiches-03.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio4')">« 5s</button>
+          <button onclick="playPause('audio4')" id="playPauseBtn_audio4">Play</button>
+          <button onclick="skip('audio4')">5s »</button>
+          <select onchange="changeSpeed('audio4', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio4" value="0" step="0.1" min="0" max="100" onchange="seek('audio4', this.value)">
+          <div class="time" id="time_audio4">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Léa Moreau (12 ans)</div>
+<div class="l1">Léa Moreau (12 anys)</div>
+<div class="l2">Hobbies : Faire de la danse et dessiner</div>
+<div class="l1">Passatemps: Ballar i dibuixar</div>
+<div class="l2">Origine : Paris, France</div>
+<div class="l1">Origen: París, França</div>
+<div class="l2">Famille : Un petit frère (9 ans)</div>
+<div class="l1">Família: Un germà petit (9 anys)</div>
+<div class="l2">Animal de compagnie : Un poisson rouge</div>
+<div class="l1">Mascota: Un peix roig</div>
+
+    <div class="audio-section" id="audio5_container">
+      <div class="audio-player">
+        <audio id="audio5" src="30fiches-04.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio5')">« 5s</button>
+          <button onclick="playPause('audio5')" id="playPauseBtn_audio5">Play</button>
+          <button onclick="skip('audio5')">5s »</button>
+          <select onchange="changeSpeed('audio5', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio5" value="0" step="0.1" min="0" max="100" onchange="seek('audio5', this.value)">
+          <div class="time" id="time_audio5">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Hugo Fernandez (13 ans)</div>
+<div class="l1">Hugo Fernandez (13 anys)</div>
+<div class="l2">Hobbies : Regarder des films et faire du judo</div>
+<div class="l1">Passatemps: Mirar pel·lícules i fer judo</div>
+<div class="l2">Origine : Valence, Espagne</div>
+<div class="l1">Origen: València, Espanya</div>
+<div class="l2">Famille : Fils unique</div>
+<div class="l1">Família: Fill únic</div>
+<div class="l2">Animal de compagnie : Une tortue</div>
+<div class="l1">Mascota: Una tortuga</div>
+
+    <div class="audio-section" id="audio6_container">
+      <div class="audio-player">
+        <audio id="audio6" src="30fiches-05.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio6')">« 5s</button>
+          <button onclick="playPause('audio6')" id="playPauseBtn_audio6">Play</button>
+          <button onclick="skip('audio6')">5s »</button>
+          <select onchange="changeSpeed('audio6', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio6" value="0" step="0.1" min="0" max="100" onchange="seek('audio6', this.value)">
+          <div class="time" id="time_audio6">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Clara Dupont (11 ans)</div>
+<div class="l1">Clara Dupont (11 anys)</div>
+<div class="l2">Hobbies : Collectionner des autocollants et cuisiner</div>
+<div class="l1">Passatemps: Col·leccionar autocolants i cuinar</div>
+<div class="l2">Origine : Bordeaux, France</div>
+<div class="l1">Origen: Bordexa, França</div>
+<div class="l2">Famille : Une sœur jumelle</div>
+<div class="l1">Família: Una germana bessona</div>
+<div class="l2">Animal de compagnie : Un hamster</div>
+<div class="l1">Mascota: Un hamster</div>
+
+    <div class="audio-section" id="audio7_container">
+      <div class="audio-player">
+        <audio id="audio7" src="30fiches-06.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio7')">« 5s</button>
+          <button onclick="playPause('audio7')" id="playPauseBtn_audio7">Play</button>
+          <button onclick="skip('audio7')">5s »</button>
+          <select onchange="changeSpeed('audio7', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio7" value="0" step="0.1" min="0" max="100" onchange="seek('audio7', this.value)">
+          <div class="time" id="time_audio7">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Tom Garcia (14 ans)</div>
+<div class="l1">Tom Garcia (14 anys)</div>
+<div class="l2">Hobbies : Faire du skate et jouer de la batterie</div>
+<div class="l1">Passatemps: Fer skate i tocar la bateria</div>
+<div class="l2">Origine : Marseille, France</div>
+<div class="l1">Origen: Marsella, França</div>
+<div class="l2">Famille : Un frère cadet (12 ans)</div>
+<div class="l1">Família: Un germà petit (12 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio8_container">
+      <div class="audio-player">
+        <audio id="audio8" src="30fiches-07.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio8')">« 5s</button>
+          <button onclick="playPause('audio8')" id="playPauseBtn_audio8">Play</button>
+          <button onclick="skip('audio8')">5s »</button>
+          <select onchange="changeSpeed('audio8', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio8" value="0" step="0.1" min="0" max="100" onchange="seek('audio8', this.value)">
+          <div class="time" id="time_audio8">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Mia Rossi (13 ans)</div>
+<div class="l1">Mia Rossi (13 anys)</div>
+<div class="l2">Hobbies : Chanter et nager</div>
+<div class="l1">Passatemps: Cantar i nedar</div>
+<div class="l2">Origine : Rome, Italie</div>
+<div class="l1">Origen: Roma, Itàlia</div>
+<div class="l2">Famille : Une grande sœur (16 ans)</div>
+<div class="l1">Família: Una germana gran (16 anys)</div>
+<div class="l2">Animal de compagnie : Un perroquet</div>
+<div class="l1">Mascota: Un periquito</div>
+
+    <div class="audio-section" id="audio9_container">
+      <div class="audio-player">
+        <audio id="audio9" src="30fiches-08.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio9')">« 5s</button>
+          <button onclick="playPause('audio9')" id="playPauseBtn_audio9">Play</button>
+          <button onclick="skip('audio9')">5s »</button>
+          <select onchange="changeSpeed('audio9', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio9" value="0" step="0.1" min="0" max="100" onchange="seek('audio9', this.value)">
+          <div class="time" id="time_audio9">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Julien Bernard (12 ans)</div>
+<div class="l1">Julien Bernard (12 anys)</div>
+<div class="l2">Hobbies : Jouer au basket et peindre</div>
+<div class="l1">Passatemps: Jugar a bàsquet i pintar</div>
+<div class="l2">Origine : Nice, France</div>
+<div class="l1">Origen: Niss, França</div>
+<div class="l2">Famille : Une sœur cadette (8 ans)</div>
+<div class="l1">Família: Una germana petita (8 anys)</div>
+<div class="l2">Animal de compagnie : Un chien nommé "Max"</div>
+<div class="l1">Mascota: Un gos anomenat "Max"</div>
+
+    <div class="audio-section" id="audio10_container">
+      <div class="audio-player">
+        <audio id="audio10" src="30fiches-09.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio10')">« 5s</button>
+          <button onclick="playPause('audio10')" id="playPauseBtn_audio10">Play</button>
+          <button onclick="skip('audio10')">5s »</button>
+          <select onchange="changeSpeed('audio10', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio10" value="0" step="0.1" min="0" max="100" onchange="seek('audio10', this.value)">
+          <div class="time" id="time_audio10">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Lola Leroy (11 ans)</div>
+<div class="l1">Lola Leroy (11 anys)</div>
+<div class="l2">Hobbies : Lire des bandes dessinées et faire du yoga</div>
+<div class="l1">Passatemps: Llegir còmics i fer ioga</div>
+<div class="l2">Origine : Lille, France</div>
+<div class="l1">Origen: Lille, França</div>
+<div class="l2">Famille : Un frère aîné (15 ans)</div>
+<div class="l1">Família: Un germà gran (15 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio11_container">
+      <div class="audio-player">
+        <audio id="audio11" src="30fiches-10.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio11')">« 5s</button>
+          <button onclick="playPause('audio11')" id="playPauseBtn_audio11">Play</button>
+          <button onclick="skip('audio11')">5s »</button>
+          <select onchange="changeSpeed('audio11', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio11" value="0" step="0.1" min="0" max="100" onchange="seek('audio11', this.value)">
+          <div class="time" id="time_audio11">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Maxime Dubois (13 ans)</div>
+<div class="l1">Maxime Dubois (13 anys)</div>
+<div class="l2">Hobbies : Jouer au tennis et coder des jeux vidéo</div>
+<div class="l1">Passatemps: Jugar a tennis i programar videojocs</div>
+<div class="l2">Origine : Genève, Suisse</div>
+<div class="l1">Origen: Ginebra, Suïssa</div>
+<div class="l2">Famille : Fils unique</div>
+<div class="l1">Família: Fill únic</div>
+<div class="l2">Animal de compagnie : Un chat nommé "Pixel"</div>
+<div class="l1">Mascota: Un gat anomenat "Pixel"</div>
+
+    <div class="audio-section" id="audio12_container">
+      <div class="audio-player">
+        <audio id="audio12" src="30fiches-11.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio12')">« 5s</button>
+          <button onclick="playPause('audio12')" id="playPauseBtn_audio12">Play</button>
+          <button onclick="skip('audio12')">5s »</button>
+          <select onchange="changeSpeed('audio12', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio12" value="0" step="0.1" min="0" max="100" onchange="seek('audio12', this.value)">
+          <div class="time" id="time_audio12">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Sofia Almeida (14 ans)</div>
+<div class="l1">Sofia Almeida (14 anys)</div>
+<div class="l2">Hobbies : Faire du théâtre et écouter de la musique</div>
+<div class="l1">Passatemps: Fer teatre i escoltar música</div>
+<div class="l2">Origine : Lisbonne, Portugal</div>
+<div class="l1">Origen: Lisboa, Portugal</div>
+<div class="l2">Famille : Une grande sœur (17 ans)</div>
+<div class="l1">Família: Una germana gran (17 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio13_container">
+      <div class="audio-player">
+        <audio id="audio13" src="30fiches-12.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio13')">« 5s</button>
+          <button onclick="playPause('audio13')" id="playPauseBtn_audio13">Play</button>
+          <button onclick="skip('audio13')">5s »</button>
+          <select onchange="changeSpeed('audio13', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio13" value="0" step="0.1" min="0" max="100" onchange="seek('audio13', this.value)">
+          <div class="time" id="time_audio13">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Nathan Blanc (12 ans)</div>
+<div class="l1">Nathan Blanc (12 anys)</div>
+<div class="l2">Hobbies : Construire des maquettes et nager</div>
+<div class="l1">Passatemps: Construir maquetes i nedar</div>
+<div class="l2">Origine : Montpellier, France</div>
+<div class="l1">Origen: Montpeller, França</div>
+<div class="l2">Famille : Un frère cadet (10 ans)</div>
+<div class="l1">Família: Un germà petit (10 anys)</div>
+<div class="l2">Animal de compagnie : Un poisson nommé "Bubble"</div>
+<div class="l1">Mascota: Un peix anomenat "Bubble"</div>
+
+    <div class="audio-section" id="audio14_container">
+      <div class="audio-player">
+        <audio id="audio14" src="30fiches-13.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio14')">« 5s</button>
+          <button onclick="playPause('audio14')" id="playPauseBtn_audio14">Play</button>
+          <button onclick="skip('audio14')">5s »</button>
+          <select onchange="changeSpeed('audio14', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio14" value="0" step="0.1" min="0" max="100" onchange="seek('audio14', this.value)">
+          <div class="time" id="time_audio14">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Camille Roy (13 ans)</div>
+<div class="l1">Camille Roy (13 anys)</div>
+<div class="l2">Hobbies : Faire de la photographie et cuisiner</div>
+<div class="l1">Passatemps: Fer fotografia i cuinar</div>
+<div class="l2">Origine : Dijon, France</div>
+<div class="l1">Origen: Dijó, França</div>
+<div class="l2">Famille : Une petite sœur (6 ans)</div>
+<div class="l1">Família: Una germana petita (6 anys)</div>
+<div class="l2">Animal de compagnie : Un lapin nommé "Neige"</div>
+<div class="l1">Mascota: Un conill anomenat "Neige"</div>
+
+    <div class="audio-section" id="audio15_container">
+      <div class="audio-player">
+        <audio id="audio15" src="30fiches-14.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio15')">« 5s</button>
+          <button onclick="playPause('audio15')" id="playPauseBtn_audio15">Play</button>
+          <button onclick="skip('audio15')">5s »</button>
+          <select onchange="changeSpeed('audio15', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio15" value="0" step="0.1" min="0" max="100" onchange="seek('audio15', this.value)">
+          <div class="time" id="time_audio15">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Enzo Vidal (11 ans)</div>
+<div class="l1">Enzo Vidal (11 anys)</div>
+<div class="l2">Hobbies : Jouer aux échecs et regarder des documentaires</div>
+<div class="l1">Passatemps: Jugar a escacs i mirar documentals</div>
+<div class="l2">Origine : Séville, Espagne</div>
+<div class="l1">Origen: Sevilla, Espanya</div>
+<div class="l2">Famille : Deux grandes sœurs (13 et 15 ans)</div>
+<div class="l1">Família: Dues germanes grans (13 i 15 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio16_container">
+      <div class="audio-player">
+        <audio id="audio16" src="30fiches-15.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio16')">« 5s</button>
+          <button onclick="playPause('audio16')" id="playPauseBtn_audio16">Play</button>
+          <button onclick="skip('audio16')">5s »</button>
+          <select onchange="changeSpeed('audio16', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio16" value="0" step="0.1" min="0" max="100" onchange="seek('audio16', this.value)">
+          <div class="time" id="time_audio16">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Alice Lambert (14 ans)</div>
+<div class="l1">Alice Lambert (14 anys)</div>
+<div class="l2">Hobbies : Danser et écrire des poèmes</div>
+<div class="l1">Passatemps: Ballar i escriure poemes</div>
+<div class="l2">Origine : Nantes, France</div>
+<div class="l1">Origen: Nantes, França</div>
+<div class="l2">Famille : Fille unique</div>
+<div class="l1">Família: Filla única</div>
+<div class="l2">Animal de compagnie : Un chat nommé "Mimi"</div>
+<div class="l1">Mascota: Un gat anomenat "Mimi"</div>
+
+    <div class="audio-section" id="audio17_container">
+      <div class="audio-player">
+        <audio id="audio17" src="30fiches-16.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio17')">« 5s</button>
+          <button onclick="playPause('audio17')" id="playPauseBtn_audio17">Play</button>
+          <button onclick="skip('audio17')">5s »</button>
+          <select onchange="changeSpeed('audio17', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio17" value="0" step="0.1" min="0" max="100" onchange="seek('audio17', this.value)">
+          <div class="time" id="time_audio17">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Ethan Morales (12 ans)</div>
+<div class="l1">Ethan Morales (12 anys)</div>
+<div class="l2">Hobbies : Jouer à des jeux de société et courir</div>
+<div class="l1">Passatemps: Jugar a jocs de taula i córrer</div>
+<div class="l2">Origine : Mexico, Mexique</div>
+<div class="l1">Origen: Mèxic, Mèxic</div>
+<div class="l2">Famille : Un frère cadet (9 ans)</div>
+<div class="l1">Família: Un germà petit (9 anys)</div>
+<div class="l2">Animal de compagnie : Un chien nommé "Rocky"</div>
+<div class="l1">Mascota: Un gos anomenat "Rocky"</div>
+
+    <div class="audio-section" id="audio18_container">
+      <div class="audio-player">
+        <audio id="audio18" src="30fiches-17.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio18')">« 5s</button>
+          <button onclick="playPause('audio18')" id="playPauseBtn_audio18">Play</button>
+          <button onclick="skip('audio18')">5s »</button>
+          <select onchange="changeSpeed('audio18', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio18" value="0" step="0.1" min="0" max="100" onchange="seek('audio18', this.value)">
+          <div class="time" id="time_audio18">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Zoé Lefevre (13 ans)</div>
+<div class="l1">Zoé Lefevre (13 anys)</div>
+<div class="l2">Hobbies : Faire du bricolage et lire</div>
+<div class="l1">Passatemps: Fer bricolatge i llegir</div>
+<div class="l2">Origine : Bruxelles, Belgique</div>
+<div class="l1">Origen: Brussel·les, Bèlgica</div>
+<div class="l2">Famille : Une grande sœur (16 ans)</div>
+<div class="l1">Família: Una germana gran (16 anys)</div>
+<div class="l2">Animal de compagnie : Un cochon d’Inde</div>
+<div class="l1">Mascota: Un porcell·let d'Índia</div>
+
+    <div class="audio-section" id="audio19_container">
+      <div class="audio-player">
+        <audio id="audio19" src="30fiches-18.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio19')">« 5s</button>
+          <button onclick="playPause('audio19')" id="playPauseBtn_audio19">Play</button>
+          <button onclick="skip('audio19')">5s »</button>
+          <select onchange="changeSpeed('audio19', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio19" value="0" step="0.1" min="0" max="100" onchange="seek('audio19', this.value)">
+          <div class="time" id="time_audio19">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Victor Müller (11 ans)</div>
+<div class="l1">Victor Müller (11 anys)</div>
+<div class="l2">Hobbies : Jouer au violon et faire du vélo</div>
+<div class="l1">Passatemps: Tocar el violí i fer bicicleta</div>
+<div class="l2">Origine : Berlin, Allemagne</div>
+<div class="l1">Origen: Berlín, Alemanya</div>
+<div class="l2">Famille : Un frère aîné (14 ans)</div>
+<div class="l1">Família: Un germà gran (14 anys)</div>
+<div class="l2">Animal de compagnie : Un chien nommé "Fritz"</div>
+<div class="l1">Mascota: Un gos anomenat "Fritz"</div>
+
+    <div class="audio-section" id="audio20_container">
+      <div class="audio-player">
+        <audio id="audio20" src="30fiches-19.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio20')">« 5s</button>
+          <button onclick="playPause('audio20')" id="playPauseBtn_audio20">Play</button>
+          <button onclick="skip('audio20')">5s »</button>
+          <select onchange="changeSpeed('audio20', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio20" value="0" step="0.1" min="0" max="100" onchange="seek('audio20', this.value)">
+          <div class="time" id="time_audio20">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Inès Caron (13 ans)</div>
+<div class="l1">Inès Caron (13 anys)</div>
+<div class="l2">Hobbies : Dessiner et collectionner des timbres</div>
+<div class="l1">Passatemps: Dibuixar i col·leccionar segells</div>
+<div class="l2">Origine : Montréal, Canada</div>
+<div class="l1">Origen: Montréal, Canadà</div>
+<div class="l2">Famille : Une petite sœur (7 ans)</div>
+<div class="l1">Família: Una germana petita (7 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio21_container">
+      <div class="audio-player">
+        <audio id="audio21" src="30fiches-20.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio21')">« 5s</button>
+          <button onclick="playPause('audio21')" id="playPauseBtn_audio21">Play</button>
+          <button onclick="skip('audio21')">5s »</button>
+          <select onchange="changeSpeed('audio21', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio21" value="0" step="0.1" min="0" max="100" onchange="seek('audio21', this.value)">
+          <div class="time" id="time_audio21">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Malik Benali (14 ans)</div>
+<div class="l1">Malik Benali (14 anys)</div>
+<div class="l2">Hobbies : Jouer au foot et danser le hip-hop</div>
+<div class="l1">Passatemps: Jugar a futbol i ballar hip-hop</div>
+<div class="l2">Origine : Alger, Algérie</div>
+<div class="l1">Origen: Alger, Algèria</div>
+<div class="l2">Famille : Deux frères cadets (12 et 10 ans)</div>
+<div class="l1">Família: Dos germans petits (12 i 10 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio22_container">
+      <div class="audio-player">
+        <audio id="audio22" src="30fiches-21.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio22')">« 5s</button>
+          <button onclick="playPause('audio22')" id="playPauseBtn_audio22">Play</button>
+          <button onclick="skip('audio22')">5s »</button>
+          <select onchange="changeSpeed('audio22', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio22" value="0" step="0.1" min="0" max="100" onchange="seek('audio22', this.value)">
+          <div class="time" id="time_audio22">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Hana Takahashi (12 ans)</div>
+<div class="l1">Hana Takahashi (12 anys)</div>
+<div class="l2">Hobbies : Jouer au piano et dessiner des mangas</div>
+<div class="l1">Passatemps: Tocar el piano i dibuixar mangas</div>
+<div class="l2">Origine : Tokyo, Japon</div>
+<div class="l1">Origen: Tòquio, Japó</div>
+<div class="l2">Famille : Une grande sœur (17 ans)</div>
+<div class="l1">Família: Una germana gran (17 anys)</div>
+<div class="l2">Animal de compagnie : Un chat nommé "Kuro"</div>
+<div class="l1">Mascota: Un gat anomenat "Kuro"</div>
+
+    <div class="audio-section" id="audio23_container">
+      <div class="audio-player">
+        <audio id="audio23" src="30fiches-22.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio23')">« 5s</button>
+          <button onclick="playPause('audio23')" id="playPauseBtn_audio23">Play</button>
+          <button onclick="skip('audio23')">5s »</button>
+          <select onchange="changeSpeed('audio23', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio23" value="0" step="0.1" min="0" max="100" onchange="seek('audio23', this.value)">
+          <div class="time" id="time_audio23">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Oscar Schmidt (11 ans)</div>
+<div class="l1">Oscar Schmidt (11 anys)</div>
+<div class="l2">Hobbies : Lire des BD et jouer au ping-pong</div>
+<div class="l1">Passatemps: Llegir còmics i jugar a ping-pong</div>
+<div class="l2">Origine : Zurich, Suisse</div>
+<div class="l1">Origen: Zuric, Suïssa</div>
+<div class="l2">Famille : Un frère cadet (9 ans)</div>
+<div class="l1">Família: Un germà petit (9 anys)</div>
+<div class="l2">Animal de compagnie : Une tortue</div>
+<div class="l1">Mascota: Una tortuga</div>
+
+    <div class="audio-section" id="audio24_container">
+      <div class="audio-player">
+        <audio id="audio24" src="30fiches-23.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio24')">« 5s</button>
+          <button onclick="playPause('audio24')" id="playPauseBtn_audio24">Play</button>
+          <button onclick="skip('audio24')">5s »</button>
+          <select onchange="changeSpeed('audio24', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio24" value="0" step="0.1" min="0" max="100" onchange="seek('audio24', this.value)">
+          <div class="time" id="time_audio24">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Jade Nguyen (14 ans)</div>
+<div class="l1">Jade Nguyen (14 anys)</div>
+<div class="l2">Hobbies : Peindre et faire de la randonnée</div>
+<div class="l1">Passatemps: Pintar i fer senderisme</div>
+<div class="l2">Origine : Hanoï, Vietnam</div>
+<div class="l1">Origen: Hanoi, Vietnam</div>
+<div class="l2">Famille : Deux grandes sœurs (16 et 18 ans)</div>
+<div class="l1">Família: Dues germanes grans (16 i 18 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio25_container">
+      <div class="audio-player">
+        <audio id="audio25" src="30fiches-24.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio25')">« 5s</button>
+          <button onclick="playPause('audio25')" id="playPauseBtn_audio25">Play</button>
+          <button onclick="skip('audio25')">5s »</button>
+          <select onchange="changeSpeed('audio25', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio25" value="0" step="0.1" min="0" max="100" onchange="seek('audio25', this.value)">
+          <div class="time" id="time_audio25">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Rafael Costa (12 ans)</div>
+<div class="l1">Rafael Costa (12 anys)</div>
+<div class="l2">Hobbies : Jouer au basket et danser</div>
+<div class="l1">Passatemps: Jugar a bàsquet i ballar</div>
+<div class="l2">Origine : Rio de Janeiro, Brésil</div>
+<div class="l1">Origen: Rio de Janeiro, Brasil</div>
+<div class="l2">Famille : Un frère aîné (15 ans)</div>
+<div class="l1">Família: Un germà gran (15 anys)</div>
+<div class="l2">Animal de compagnie : Un perroquet nommé "Rio"</div>
+<div class="l1">Mascota: Un periquito anomenat "Rio"</div>
+
+    <div class="audio-section" id="audio26_container">
+      <div class="audio-player">
+        <audio id="audio26" src="30fiches-25.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio26')">« 5s</button>
+          <button onclick="playPause('audio26')" id="playPauseBtn_audio26">Play</button>
+          <button onclick="skip('audio26')">5s »</button>
+          <select onchange="changeSpeed('audio26', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio26" value="0" step="0.1" min="0" max="100" onchange="seek('audio26', this.value)">
+          <div class="time" id="time_audio26">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Clara Muller (13 ans)</div>
+<div class="l1">Clara Muller (13 anys)</div>
+<div class="l2">Hobbies : Jouer de la flûte et faire du yoga</div>
+<div class="l1">Passatemps: Tocar la flauta i fer ioga</div>
+<div class="l2">Origine : Vienne, Autriche</div>
+<div class="l1">Origen: Viena, Àustria</div>
+<div class="l2">Famille : Une petite sœur (10 ans)</div>
+<div class="l1">Família: Una germana petita (10 anys)</div>
+<div class="l2">Animal de compagnie : Un chat</div>
+<div class="l1">Mascota: Un gat</div>
+
+    <div class="audio-section" id="audio27_container">
+      <div class="audio-player">
+        <audio id="audio27" src="30fiches-26.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio27')">« 5s</button>
+          <button onclick="playPause('audio27')" id="playPauseBtn_audio27">Play</button>
+          <button onclick="skip('audio27')">5s »</button>
+          <select onchange="changeSpeed('audio27', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio27" value="0" step="0.1" min="0" max="100" onchange="seek('audio27', this.value)">
+          <div class="time" id="time_audio27">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Nicolas Perez (14 ans)</div>
+<div class="l1">Nicolas Perez (14 anys)</div>
+<div class="l2">Hobbies : Programmer des robots et faire de la natation</div>
+<div class="l1">Passatemps: Programar robots i nedar</div>
+<div class="l2">Origine : Mexico, Mexique</div>
+<div class="l1">Origen: Mèxic, Mèxic</div>
+<div class="l2">Famille : Fils unique</div>
+<div class="l1">Família: Fill únic</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio28_container">
+      <div class="audio-player">
+        <audio id="audio28" src="30fiches-27.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio28')">« 5s</button>
+          <button onclick="playPause('audio28')" id="playPauseBtn_audio28">Play</button>
+          <button onclick="skip('audio28')">5s »</button>
+          <select onchange="changeSpeed('audio28', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio28" value="0" step="0.1" min="0" max="100" onchange="seek('audio28', this.value)">
+          <div class="time" id="time_audio28">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Salma Hussein (11 ans)</div>
+<div class="l1">Salma Hussein (11 anys)</div>
+<div class="l2">Hobbies : Peindre et jardiner</div>
+<div class="l1">Passatemps: Pintar i jardiner</div>
+<div class="l2">Origine : Le Caire, Égypte</div>
+<div class="l1">Origen: El Caire, Egipte</div>
+<div class="l2">Famille : Une petite sœur (8 ans)</div>
+<div class="l1">Família: Una germana petita (8 anys)</div>
+<div class="l2">Animal de compagnie : Un poisson</div>
+<div class="l1">Mascota: Un peix</div>
+
+    <div class="audio-section" id="audio29_container">
+      <div class="audio-player">
+        <audio id="audio29" src="30fiches-28.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio29')">« 5s</button>
+          <button onclick="playPause('audio29')" id="playPauseBtn_audio29">Play</button>
+          <button onclick="skip('audio29')">5s »</button>
+          <select onchange="changeSpeed('audio29', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio29" value="0" step="0.1" min="0" max="100" onchange="seek('audio29', this.value)">
+          <div class="time" id="time_audio29">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      <div class="l2">Louis Charpentier (12 ans)</div>
+<div class="l1">Louis Charpentier (12 anys)</div>
+<div class="l2">Hobbies : Jouer au rugby et construire des maquettes</div>
+<div class="l1">Passatemps: Jugar a rugbi i construir maquetes</div>
+<div class="l2">Origine : Bordeaux, France</div>
+<div class="l1">Origen: Bordexa, França</div>
+<div class="l2">Famille : Un frère cadet (10 ans)</div>
+<div class="l1">Família: Un germà petit (10 anys)</div>
+<div class="l2">Animal de compagnie : Aucun</div>
+<div class="l1">Mascota: Cap</div>
+
+    <div class="audio-section" id="audio30_container">
+      <div class="audio-player">
+        <audio id="audio30" src="30fiches-29.mp3"></audio>
+        <div class="controls">
+          <button onclick="rewind('audio30')">« 5s</button>
+          <button onclick="playPause('audio30')" id="playPauseBtn_audio30">Play</button>
+          <button onclick="skip('audio30')">5s »</button>
+          <select onchange="changeSpeed('audio30', this.value)">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="0.90">0.90x</option>
+            <option value="0.95">0.95x</option>
+            <option value="1" selected>1x</option>
+          </select>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressBar_audio30" value="0" step="0.1" min="0" max="100" onchange="seek('audio30', this.value)">
+          <div class="time" id="time_audio30">0:00 / 0:00</div>
+        </div>
+      </div>
+    </div>
+      
+  <script>
+    // Function to toggle play/pause
+    function playPause(audioId) {
+      var audio = document.getElementById(audioId);
+      var playPauseBtn = document.getElementById('playPauseBtn_' + audioId);
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = 'Pause';
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = 'Play';
+      }
+    }
+
+    // Function to rewind 5 seconds
+    function rewind(audioId) {
+      var audio = document.getElementById(audioId);
+      audio.currentTime = Math.max(0, audio.currentTime - 5);
+    }
+
+    // Function to skip forward 5 seconds
+    function skip(audioId) {
+      var audio = document.getElementById(audioId);
+      audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+    }
+
+    // Function to change playback speed
+    function changeSpeed(audioId, speed) {
+      var audio = document.getElementById(audioId);
+      audio.playbackRate = parseFloat(speed);
+    }
+
+    // Function to update progress bar and time
+    function updateProgress(audioId, progressBarId, timeId) {
+      var audio = document.getElementById(audioId);
+      var progressBar = document.getElementById(progressBarId);
+      var timeDisplay = document.getElementById(timeId);
+      if (audio.duration) {
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
+        timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
+      }
+    }
+
+    // Function to format time in mm:ss
+    function formatTime(seconds) {
+      var minutes = Math.floor(seconds / 60);
+      var seconds = Math.floor(seconds % 60);
+      if (seconds < 10) {
+        seconds = '0' + seconds;
+      }
+      return minutes + ':' + seconds;
+    }
+
+    // Function to seek in the audio
+    function seek(audioId, value) {
+      var audio = document.getElementById(audioId);
+      audio.currentTime = (value / 100) * audio.duration;
+    }
+
+    // Initialize audio players
+    document.addEventListener('DOMContentLoaded', function() {
+      var audioElements = document.querySelectorAll('audio');
+      audioElements.forEach(function(audio) {
+        var audioId = audio.id;
+        var audioContainer = document.getElementById(audioId + '_container');
+
+        // Check if the audio file exists
+        audio.addEventListener('loadedmetadata', function() {
+          // Show the audio player
+          audioContainer.style.display = 'block';
+          updateProgress(audioId, 'progressBar_' + audioId, 'time_' + audioId);
+        });
+
+        audio.addEventListener('error', function() {
+          // Hide the audio player if the file doesn't exist
+          audioContainer.style.display = 'none';
+          console.error('Error loading audio file:', audio.src);
+        });
+
+        // Other event listeners
+        audio.addEventListener('timeupdate', function() {
+          updateProgress(audioId, 'progressBar_' + audioId, 'time_' + audioId);
+        });
+
+        audio.addEventListener('ended', function() {
+          document.getElementById('playPauseBtn_' + audioId).textContent = 'Play';
+        });
+
+        // Attempt to load the audio file
+        audio.load();
+      });
+    });
+  </script>
+</body>
+</html>
+  
